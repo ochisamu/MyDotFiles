@@ -69,6 +69,7 @@ syntax on
 set number
 set linespace=4
 set visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 "インデント,タブ,クリップボード
 set autoindent
@@ -157,6 +158,14 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 let g:unite_enable_split_vertically = 1 "縦分割で開く
 let g:unite_winwidth = 40 "横幅40で開く
 " バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> <Space>ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> <Space>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> <Space>ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> <Space>um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> <Space>uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> <Space>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
