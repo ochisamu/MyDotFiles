@@ -4,3 +4,13 @@ This Dir Include ...
 .dir_colors
 .vim
 .vimrc
+
+1. 
+$ ./install.sh
+
+2.
+:NeoBundleInstall
+
+3.
+:cd ~/.vim/bundle/neobundle/vimproc/
+:make -f make_[YourSystemArch]
