@@ -17,6 +17,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'surround.vim'
+NeoBundle 'pangloss/vim-javascript'
 
 NeoBundle 'molokai'
 NeoBundle 'fakeclip'
@@ -24,7 +25,7 @@ NeoBundle 'buftabs'
 NeoBundle 'smartchr'
 NeoBundle 'DrawIt'
 NeoBundle 'errormarker.vim'
-
+NeoBundle 'JavaScript-syntax'
 "NeoBundle 'git://github.com/Shougo/echodoc.git'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
@@ -152,20 +153,30 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
+" VimShell VimFiler
+nnoremap <silent> ,vf :<C-u>VimFiler<CR>
+"nnoremap <silent> ,vs :<C-u>VimShell<CR>
+
 " uniteの設定 ======================================
 " 入力モードで開始する
 "let g:unite_enable_start_insert=1
-let g:unite_enable_split_vertically = 1 "縦分割で開く
-let g:unite_winwidth = 40 "横幅40で開く
+"let g:unite_enable_split_vertically = 1 "縦分割で開く
+"let g:unite_winwidth = 40 "横幅40で開く
 " バッファ一覧
-nnoremap <silent> <Space>ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> <Space>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap <silent> <Space>ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> <Space>um :<C-u>Unite file_mru<CR>
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> <Space>uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-nnoremap <silent> <Space>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+"nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+"fileごとの設定 ======================================== 
+" javascript
+autocmd FileType javascript :compiler gjslint
+autocmd QuickfixCmdPost make copen
+
