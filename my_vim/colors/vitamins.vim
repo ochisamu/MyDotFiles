@@ -14,7 +14,7 @@ let colors_name = "vitamins"
 
 " Vim >= 7.0 specific colors
 if version >= 700
-  hi CursorLine guibg=#2d2d2d ctermbg=236
+  hi CursorLine guibg=#2d2d2d ctermbg=241
   hi CursorColumn guibg=#2d2d2d ctermbg=236
   hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold ctermbg=59
   hi Pmenu 		guifg=#f6f3e8 guibg=#444444 ctermbg=242
