@@ -65,7 +65,7 @@ set t_Co=256
 if has('gui_running')
 	colorscheme wombat
 else
-	colorscheme ron
+	colorscheme vitamins
 endif
 syntax on
 set number
