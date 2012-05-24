@@ -24,7 +24,7 @@ endif
 
 " General colors
 hi Cursor 		guifg=NONE    guibg=#656565 gui=none ctermbg=0x241
-hi Normal 		guifg=#f6f3f0 guibg=#242424 gui=none ctermfg=254 ctermbg=235
+hi Normal 		guifg=#f6f3f0 guibg=#242424 gui=none ctermfg=255 ctermbg=235
 hi NonText 		guifg=#808080 guibg=#303030 gui=none ctermfg=242 ctermbg=237
 hi LineNr 		guifg=#5c5a4f guibg=#000000 gui=none ctermfg=239 ctermbg=232
 hi StatusLine 	guifg=#f6f3e8 guibg=#444444 gui=italic
@@ -36,7 +36,7 @@ hi Visual		guifg=#ffffd7 guibg=#444444 gui=none ctermfg=186 ctermbg=238
 hi SpecialKey	guifg=#808080 guibg=#343434 gui=none
 
 " Syntax highlighting
-hi Comment 		guifg=#808080 gui=italic ctermfg=244
+hi Comment 		guifg=#808080 gui=italic ctermfg=246
 hi Todo 		guifg=#8f8f8f gui=italic ctermfg=245
 hi Constant 	guifg=#acf0f2 gui=none ctermfg=159
 hi String 		guifg=#ff5d28 gui=italic ctermfg=202
