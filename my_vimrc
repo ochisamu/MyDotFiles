@@ -18,6 +18,9 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'surround.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'nvie/vim-flake8'
 
 NeoBundle 'molokai'
 NeoBundle 'fakeclip'
@@ -26,13 +29,13 @@ NeoBundle 'smartchr'
 NeoBundle 'DrawIt'
 NeoBundle 'errormarker.vim'
 NeoBundle 'JavaScript-syntax'
+NeoBundle 'compilerpython.vim'
 "NeoBundle 'git://github.com/Shougo/echodoc.git'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
 
-filetype plugin on
 filetype indent on
-
+filetype on
 "GUIの設定  
 set guioptions-=T "ツールバーなし
 set guioptions-=m "メニューバーなし
@@ -154,8 +157,21 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " VimShell VimFiler
-nnoremap <silent> ,vf :<C-u>VimFiler<CR>
-"nnoremap <silent> ,vs :<C-u>VimShell<CR>
+nnoremap ,vf :<C-u>VimFiler<CR>
+"nnoremap ,vs :<C-u>VimShell<CR>
+
+" create directory automatically
+augroup vimrc-auto-mkdir
+    autocmd!
+    autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+    function! s:auto_mkdir(dir, force)
+        if !isdirectory(a:dir) && (a:force ||
+            \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+            call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+        endif
+    endfunction
+augroup END
+
 
 " uniteの設定 ======================================
 " 入力モードで開始する
@@ -163,17 +179,22 @@ nnoremap <silent> ,vf :<C-u>VimFiler<CR>
 "let g:unite_enable_split_vertically = 1 "縦分割で開く
 "let g:unite_winwidth = 40 "横幅40で開く
 " バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap ,ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+nnoremap ,um :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+nnoremap ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-"nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+"nnoremap ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+  \ 'active_filetypes': ['python', 'yaml'],
+  \ 'passive_filetypes': ['php'] }
 
 "fileごとの設定 ======================================== 
 " javascript

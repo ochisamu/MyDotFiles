@@ -16,23 +16,25 @@ select-word-style bash
 #export SPROMPT="%B%{${fg[gray]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
 nprom () {
 	    setopt prompt_subst
-			    local rbase=$'%{\e[33m%}[%~]%{\e[m%}' lf=$'\n'
-				    local pct=$'%0(?||%18(?||%{\e[31m%}))%#%{\e[m%}'
-					    RPROMPT="%9(~||$rbase)"
-						    case "$USER" in
-							      yatex)	PROMPT=$'%{\e[33m%}%U%m{%n}%%%{\e[m%}%u ' ;;
+	    local rbase=$'%{\e[33m%}[%~]%{\e[m%}' lf=$'\n'
+	    local pct=$'%0(?||%18(?||%{\e[31m%}))%#%{\e[m%}'
+	    RPROMPT="%9(~||$rbase)"
+	    case "$USER" in
+		      yatex)	PROMPT=$'%{\e[33m%}%U%m{%n}%%%{\e[m%}%u ' ;;
 		      java)	PROMPT=$'%{\e[36m%}%U%m{%n}%%%{\e[m%}%u ' ;;
-			        *)
-						    local pbase=$'%{\e[$[33]m%}%U%B%m{%n}%b'"$pct%u "
-							    PROMPT="%9(~|$rbase$lf|)$pbase"
-								    ;;
-					    esac
-							    [[ "$TERM" = "screen" ]] && RPROMPT="[%U%~%u]"
+	        *)
+		    local pbase=$'%{\e[$[33]m%}%U%B%m{%n}%b'"$pct%u "
+		    PROMPT="%9(~|$rbase$lf|)$pbase"
+		    ;;
+	    esac
+		    [[ "$TERM" = "screen" ]] && RPROMPT="[%U%~%u]"
 }
 nprom
 
 
 # environment variables
+PATH=$PATH:$HOME/bin
+export PATH
 export LANG=ja_JP.UTF-8
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
