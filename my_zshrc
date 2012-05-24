@@ -46,7 +46,7 @@ export JAVA_HOME='/usr/lib/jvm/java-1.6.0-openjdk'
  alias vi='vim'
  alias rm='rm -frv'
  alias df='df -h'
-eval "`dircolors ~/.dir_colors`"
+#eval "dircolors ~/.dir_colors"
 [ -f ~/.zshrc_aliases ] && source ~/.zshrc_aliases
 
 
@@ -85,7 +85,8 @@ setopt auto_pushd
 # other...
 setopt correct
 setopt list_packed
-setopt nolistbeep
+setopt nolistbees
+setopt no_beep
 autoload math functions
 setopt complete_aliases
 
