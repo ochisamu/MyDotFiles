@@ -29,8 +29,11 @@ NeoBundle 'smartchr'
 NeoBundle 'DrawIt'
 NeoBundle 'errormarker.vim'
 NeoBundle 'JavaScript-syntax'
+<<<<<<< HEAD
 NeoBundle 'compilerpython.vim'
+=======
 NeoBundle 'sudo.vim'
+>>>>>>> 1b376f07c81e1ce947905887e974f058688d38f3
 "NeoBundle 'git://github.com/Shougo/echodoc.git'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
