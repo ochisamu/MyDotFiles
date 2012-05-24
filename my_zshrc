@@ -85,7 +85,7 @@ setopt auto_pushd
 # other...
 setopt correct
 setopt list_packed
-setopt nolistbees
+setopt nolistbeep
 setopt no_beep
 autoload math functions
 setopt complete_aliases
