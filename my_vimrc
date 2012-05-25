@@ -21,6 +21,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
 "NeoBundle 'nvie/vim-flake8'
+NeoBundle 'mattn/sonictemplate-vim'
 
 NeoBundle 'molokai'
 NeoBundle 'fakeclip'
