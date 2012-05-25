@@ -64,6 +64,7 @@ nnoremap <silent> <C-h> :bprev<CR>
 nnoremap <C-i> :<C-u>help<Space>
 nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><CR> 
 
+nnoremap ,bd :<C-u>Kwbd<CR>
 "色とか
 set t_Co=256
 if has('gui_running')
@@ -85,6 +86,7 @@ set tabstop=4
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 set hidden
+
 
 "検索結果のハイライトをESC連打で消す
 set hlsearch
@@ -116,7 +118,7 @@ augroup cch
 	autocmd WinEnter,BufRead * set cursorline
 augroup END
 :hi clear CursorLine
-highlight CursorLine ctermbg=black guibg=#444444
+highlight CursorLine ctermbg=241 guibg=#444444
 
 "VimFilerq
 let g:vimfiler_as_default_explorer = 1
