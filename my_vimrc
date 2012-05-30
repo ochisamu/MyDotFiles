@@ -65,6 +65,7 @@ nnoremap <C-i> :<C-u>help<Space>
 nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><CR> 
 
 nnoremap ,bd :<C-u>Kwbd<CR>
+inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
 "色とか
 set t_Co=256
 if has('gui_running')
@@ -205,3 +206,5 @@ let g:syntastic_mode_map = { 'mode': 'active',
 autocmd FileType javascript :compiler gjslint
 "autocmd QuickfixCmdPost make copen
 
+"im_contrtol
+let IM_CtrlIBusPython = 1
