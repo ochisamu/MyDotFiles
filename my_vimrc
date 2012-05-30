@@ -203,5 +203,5 @@ let g:syntastic_mode_map = { 'mode': 'active',
 "fileごとの設定 ======================================== 
 " javascript
 autocmd FileType javascript :compiler gjslint
-autocmd QuickfixCmdPost make copen
+"autocmd QuickfixCmdPost make copen
 
