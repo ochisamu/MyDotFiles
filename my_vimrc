@@ -66,6 +66,15 @@ nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><CR>
 
 nnoremap ,bd :<C-u>Kwbd<CR>
 inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
+
+imap OA <Up>
+imap OB <Down>
+imap OC <Right>
+imap OD <Left>
 "色とか
 set t_Co=256
 if has('gui_running')
@@ -158,8 +167,8 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 "SNIPPETS
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+imap <C-s> <Plug>(neocomplcache_snippets_expand)
+smap <C-s> <Plug>(neocomplcache_snippets_expand)
 
 " VimShell VimFiler
 nnoremap ,vf :<C-u>VimFiler<CR>
