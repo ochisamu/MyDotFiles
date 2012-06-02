@@ -167,8 +167,8 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 "SNIPPETS
-imap <C-s> <Plug>(neocomplcache_snippets_expand)
-smap <C-s> <Plug>(neocomplcache_snippets_expand)
+imap <C-X> <Plug>(neocomplcache_snippets_expand)
+smap <C-x> <Plug>(neocomplcache_snippets_expand)
 
 " VimShell VimFiler
 nnoremap ,vf :<C-u>VimFiler<CR>
