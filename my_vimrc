@@ -38,6 +38,12 @@ NeoBundle 'sudo.vim'
 
 filetype indent on
 filetype on
+
+"sonictemplate
+  let g:sonictemplate_vim_template_dir = [
+  \ '$HOME/.vim/template'
+  \]
+
 "GUIの設定  
 set guioptions-=T "ツールバーなし
 set guioptions-=m "メニューバーなし

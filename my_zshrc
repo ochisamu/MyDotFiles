@@ -92,7 +92,7 @@ setopt nolistbeep
 setopt no_beep
 autoload math functions
 setopt complete_aliases
-
+setopt EXTENDED_GLOB
 #keyconfig
 #xmodmap .Xmodmap
 
