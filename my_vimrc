@@ -84,7 +84,7 @@ imap OD <Left>
 "色とか
 set t_Co=256
 if has('gui_running')
-	colorscheme wombat
+	colorscheme vitamins
 else
 	colorscheme vitamins
 endif

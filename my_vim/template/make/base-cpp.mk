@@ -1,7 +1,7 @@
 CFLAGS	= -Wall
 TARGET = {{_input_:Target}}
-SRCS = ${wildcard *.c}
-OBJS   = ${SRCS:.c=.o} 
+SRCS = ${wildcard *.cpp}
+OBJS   = ${SRCS:.cpp=.o} 
 #LIBS = -l
 #LIBDIR = -L
 #INCDIR = -I

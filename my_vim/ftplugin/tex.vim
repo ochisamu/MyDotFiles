@@ -1,1 +1,2 @@
 set fileencoding=euc-jp
+

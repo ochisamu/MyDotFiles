@@ -1,0 +1,1 @@
+/home/ikai/.dotfiles/my_vim
