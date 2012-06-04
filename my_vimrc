@@ -12,6 +12,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/echodoc'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
@@ -32,7 +33,6 @@ NeoBundle 'errormarker.vim'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'compilerpython.vim'
 NeoBundle 'sudo.vim'
-"NeoBundle 'git://github.com/Shougo/echodoc.git'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
 
@@ -179,7 +179,7 @@ smap <C-x> <Plug>(neocomplcache_snippets_expand)
 
 " VimShell VimFiler
 nnoremap ,vf :<C-u>VimFiler<CR>
-"nnoremap ,vs :<C-u>VimShell<CR>
+nnoremap ,vs :<C-u>VimShell<CR>
 
 " create directory automatically
 augroup vimrc-auto-mkdir
