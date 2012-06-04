@@ -54,6 +54,7 @@ set guioptions-=L
 set guioptions-=b "下スクロールバーなし
 
 "キーマップ
+nnoremap Y y$
 nnoremap <silent> <Space><Space>  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <F5> :<C-u>source $MYVIMRC<CR>
 nnoremap <silent> <C-l> :bnext<CR>
