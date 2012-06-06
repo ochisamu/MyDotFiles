@@ -1,5 +1,8 @@
 obj-m:= {{_input_:target}}.o
-{{_input_:target}}-objs:= $(wildcard *.o)
+
+#INPUT ALL SOURCE FILES
+SRCS = 
+{{_input_:target}}-objs:= $(SRCS *.o)
 
 KDIR:= /lib/modules/$(shell uname -r)/build
 PWD:= $(shell pwd)
