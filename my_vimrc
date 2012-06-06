@@ -69,8 +69,9 @@ nnoremap <silent><C-k> <C-w>w
 nnoremap <silent> <C-l> :bnext<CR>
 nnoremap <silent> <C-h> :bprev<CR>
 
-nnoremap <C-i> :<C-u>help<Space>
-nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><CR> 
+"nnoremap <C-i> :<C-u>help<Space>
+nnoremap <C-i> :<C-u>help<Space><C-r><C-w><CR> 
+nnoremap <C-i><C-i> :<C-u>Ref<Space>webdict<Space><C-r><C-w><CR>
 
 nnoremap ,bd :<C-u>Kwbd<CR>
 inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
