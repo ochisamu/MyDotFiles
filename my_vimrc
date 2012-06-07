@@ -84,6 +84,7 @@ imap OA <Up>
 imap OB <Down>
 imap OC <Right>
 imap OD <Left>
+inoremap <M-j> <Esc>
 "色とか
 set t_Co=256
 if has('gui_running')
