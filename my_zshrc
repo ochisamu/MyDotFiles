@@ -13,24 +13,60 @@ select-word-style bash
 
 # prompt setting
 #export PROMPT="%B%n%b@:%/%{%}/$ "
-#export SPROMPT="%B%{${fg[gray]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-nprom () {
-	    setopt prompt_subst
-	    local rbase=$'%{\e[33m%}[%~]%{\e[m%}' lf=$'\n'
-	    local pct=$'%0(?||%18(?||%{\e[31m%}))%#%{\e[m%}'
-	    RPROMPT="%9(~||$rbase)"
-	    case "$USER" in
-		      mobile)PROMPT=$'%{\e[$[31]m%}%U%B%m{%n}%b'"$pct%u "
- ;;
-		      java)	PROMPT=$'%{\e[36m%}%U%m{%n}%%%{\e[m%}%u ' ;;
-	        *)
-		    local pbase=$'%{\e[$[33]m%}%U%B%m{%n}%b'"$pct%u "
-		    PROMPT="%9(~|$rbase$lf|)$pbase"
-		    ;;
-	    esac
-		    [[ "$TERM" = "screen" ]] && RPROMPT="[%U%~%u]"
+SPROMPT="%B%{[31m%}%r%b %Bis correct?%b %B%{[31m%}[n,y,a,e]:%{[m%}%b "
+setopt prompt_subst
+local rbase=$'%{\e[33m%}[%~]%{\e[m%}' lf=$'\n'
+RPROMPT="%9(~||$rbase)"
+#nprom () {
+#	    setopt prompt_subst
+#	    local rbase=$'%{\e[33m%}[%~]%{\e[m%}' lf=$'\n'
+#	    local pct=$'%0(?||%18(?||%{\e[31m%}))%#%{\e[m%}'
+#	    RPROMPT="%9(~||$rbase)"
+#	    case "$USER" in
+#		      mobile)PROMPT=$'%{\e[$[31]m%}%U%B%m{%n}%b'"$pct%u ";;
+#		      root)PROMPT=$'%{\e[$[31]m%}%U%B%m{%n}%b'"$pct%u ";;
+#	        *)
+#		    local pbase=$'%{\e[$[33]m%}%U%B{%n}%b'"$pct%u "
+#		    PROMPT="%9(~|$rbase$lf|)$pbase"
+#		    ;;
+#	    esac
+#		[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+#		        PROMPT="%B%U%{[32m%}${HOST%%.*}${PROMPT}"
+#		    [[ "$TERM" = "screen" ]] && RPROMPT="[%U%~%u]"
+#}
+#nprom
+#zsh¥×¥í¥ó¥×¥È¤Ë¥â¡¼¥ÉÉ½¼¨####################################
+function zle-line-init zle-keymap-select {
+
+	#¥ê¥â¡¼¥È¤Î¾ì¹ç¤Ï¥Û¥¹¥ÈÌ¾¤Î¿§¤òÊÑ¤¨¤ë
+	if [ -n "${REMOTEHOST}${SSH_CONNECTION}" ]; then
+		PROMPT="%{[32m%}%B%U%m"
+	else
+		PROMPT="%{[33m%}%B%U%m"
+	fi
+
+	#root¤Î¾ì¹ç¤Ï¿§¤òÊÑ¤¨¤ë
+	case "$USER" in
+		root)
+			PROMPT="${PROMPT}%{[33m%}%u{%U%{[31m%}%n/"
+			;;
+		*)
+			PROMPT="${PROMPT}%{[33m%}{%n/"
+			;;
+	esac
+	#zsh-vi¤Î¥â¡¼¥ÉÌ¾¤òÉ½¼¨
+	case $KEYMAP in
+		vicmd)
+			PROMPT="${PROMPT}%{[31m%}NOR%{[33m%}}%{[37m%}%#%b%u "
+			;;
+		main|viins)
+			PROMPT="${PROMPT}%{[36m%}INS%{[33m%}}%{[37m%}%#%b%u "
+			;;
+	esac
+	zle reset-prompt
 }
-nprom
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 
 # environment variables
