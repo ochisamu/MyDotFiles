@@ -44,8 +44,8 @@ function myprom(){
 	fi
 
 	#root¤Î¾ì¹ç¤Ï¿§¤òÊÑ¤¨¤ë
-	case "$USER" in
-		root)
+	case "$UID" in
+		0)
 			PROMPT="${PROMPT}%{[33m%}%u{%U%{[31m%}%n/"
 			;;
 		*)
