@@ -1,2 +1,2 @@
-set fileencoding=euc-jp
+" set fileencoding=euc-jp
 

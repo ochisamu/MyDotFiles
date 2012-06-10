@@ -120,7 +120,7 @@ set laststatus=2
 
 "文字エンコードをutf-8に固定
 set fileencoding=utf-8
-set fileencodings=euc-jp,ucs-bom,utf-8,iso-2022-jp,cp932,utf-16,utf-16le
+set fileencodings=utf-8,euc-jp,ucs-bom,iso-2022-jp,cp932,utf-16,utf-16le
 
 "インクリメンタルサーチ
 set incsearch
@@ -218,7 +218,7 @@ nnoremap ,uu :<C-u>Unite buffer file_mru<CR>
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['python', 'yaml'],
-  \ 'passive_filetypes': ['php'] }
+  \ 'passive_filetypes': ['php', 'c'] }
 
 "fileごとの設定 ======================================== 
 " javascript
