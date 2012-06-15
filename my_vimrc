@@ -76,6 +76,7 @@ nnoremap <C-i><C-i> :<C-u>Ref<Space>webdict<Space><C-r><C-w><CR>
 
 nnoremap ,bd :<C-u>Kwbd<CR>
 inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-h> <Left>
@@ -85,7 +86,15 @@ imap OA <Up>
 imap OB <Down>
 imap OC <Right>
 imap OD <Left>
+
 inoremap <M-j> <Esc>
+
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+
 "色とか
 set t_Co=256
 if has('gui_running')
