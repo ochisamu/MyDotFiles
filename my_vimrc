@@ -55,6 +55,10 @@ set guioptions-=b "下スクロールバーなし
 
 
 "キーマップ
+inoremap jj <Esc>
+onoremap jj <Esc>
+cnoremap jj <C-c>
+
 nnoremap Y y$
 nnoremap <silent> <Space><Space>  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <F5> :<C-u>source $MYVIMRC<CR>
@@ -189,6 +193,8 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 imap <C-X> <Plug>(neocomplcache_snippets_expand)
 smap <C-x> <Plug>(neocomplcache_snippets_expand)
 
+"echodoc"
+let g:echodoc_enable_at_startup = 1
 " VimShell VimFiler
 nnoremap ,vf :<C-u>VimFiler<CR>
 nnoremap ,vs :<C-u>VimShell<CR>
