@@ -105,8 +105,8 @@ inoremap <M-j> <Esc>
 set t_Co=256
 if has('gui_running')
 	colorscheme jellybeans
-	set guifont=MigMix\ 1m\ 11
-	set guifontwide=MigMix\ 1m\ 11
+	set guifont=Migu\ 1m\ 11
+	set guifontwide=Migu\ 1m\ 11
 else
 	colorscheme jellybeans
 endif
