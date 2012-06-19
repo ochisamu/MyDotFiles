@@ -88,13 +88,7 @@ inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
 "imap <C-h> <Left>
 "imap <C-l> <Right>
 
-imap OA <Up>
-imap OB <Down>
-imap OC <Right>
-imap OD <Left>
-
 inoremap <M-j> <Esc>
-
 "inoremap { {}<LEFT>
 "inoremap [ []<LEFT>
 "inoremap ( ()<LEFT>
@@ -109,6 +103,10 @@ if has('gui_running')
 	set guifontwide=Migu\ 1m\ 11
 else
 	colorscheme jellybeans
+	inoremap <Esc>A <up>
+	inoremap <Esc>B <down>
+	inoremap <Esc>C <right>
+	inoremap <Esc>D <left>
 endif
 syntax on
 set number
@@ -156,7 +154,7 @@ augroup cch
 	autocmd WinEnter,BufRead * set cursorline
 augroup END
 :hi clear CursorLine
-highlight CursorLine ctermbg=241 guibg=#444444
+highlight CursorLine ctermbg=235 guibg=#333333
 
 "VimFilerq
 let g:vimfiler_as_default_explorer = 1
