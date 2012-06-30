@@ -162,6 +162,12 @@ highlight CursorLine ctermbg=235 guibg=#333333
 "VimFilerq
 let g:vimfiler_as_default_explorer = 1
 
+"netrm
+let g:netrw_liststyle=3
+let g:netrw_list_hide='CVS,\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_altv=1
+let g:netrw_alto=1
+
 "Ref.vim
 let g:ref_source_webdict_sites = {
 			\   'wikipedia:ja': 'http://ja.wikipedia.org/wiki/%s',
