@@ -36,6 +36,8 @@ NeoBundle 'errormarker.vim'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'compilerpython.vim'
 NeoBundle 'sudo.vim'
+NeoBundle 'wombat256.vim'
+"NeoBundle  'gtags.vim'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
 
@@ -315,7 +317,7 @@ nnoremap ,um :<C-u>Unite file_mru<CR>
 " 常用セット
 nnoremap ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-"nnoremap ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
