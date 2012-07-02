@@ -95,6 +95,9 @@ inoremap <M-j> <Esc>
 
 nnoremap <C-t> :tabnew<CR>
 
+nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V :Vexplore!<CR><CR>
+
 "色とか
 set t_Co=256
 if has('gui_running')
@@ -311,17 +314,17 @@ augroup END
 "let g:unite_enable_split_vertically = 1 "縦分割で開く
 "let g:unite_winwidth = 40 "横幅40で開く
 " バッファ一覧
-nnoremap ,ub :<C-u>Unite buffer<CR>
+nnoremap <space>b :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <space>f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <space>r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap ,um :<C-u>Unite file_mru<CR>
+nnoremap <space>m :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap ,uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <space>u :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-nnoremap ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <space>a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
