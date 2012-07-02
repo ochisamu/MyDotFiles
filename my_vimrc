@@ -289,8 +289,8 @@ smap <C-k> <plug>(neocomplcache_snippets_expand)
 let g:echodoc_enable_at_startup = 1
 
 " VimShell VimFiler
-nnoremap ,vf :<C-u>VimFiler<CR>
-nnoremap ,vs :<C-u>VimShell<CR>
+nnoremap <space>vf :<C-u>VimFiler<CR>
+nnoremap <space>vs :<C-u>VimShell<CR>
 
 " create directory automatically
 augroup vimrc-auto-mkdir
@@ -322,8 +322,6 @@ nnoremap <space>m :<C-u>Unite file_mru<CR>
 nnoremap <space>u :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <space>a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-" 縦に割ってバッファ開く
-nmap <Space>v :vsplit<CR>:<C-u>Unite buffer<CR>
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
