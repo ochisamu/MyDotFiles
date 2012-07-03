@@ -307,7 +307,6 @@ augroup vimrc-auto-mkdir
     endfunction
 augroup END
 
-
 " uniteの設定 ======================================
 " 入力モードで開始する
 "let g:unite_enable_start_insert=1
@@ -341,3 +340,16 @@ let IM_CtrlIBusPython = 1
 
 "smartchr
 inoremap <expr> = smartchr#loop('=', ' = ', ' == ')
+
+"session save and restore
+function! RestoreSession()
+	if argc() == 0 && filereadable('./.Session.vim') "vim called without arguments
+		execute 'source ./.Session.vim'
+	end
+endfunction
+autocmd VimEnter * call RestoreSession()
+
+"save and close all files and save session file
+nnoremap <leader>w :mksession! ./.Session.vim<CR>
+nnoremap <leader>q :mksession! ./.Session.vim<CR>:wqa<CR>
+
