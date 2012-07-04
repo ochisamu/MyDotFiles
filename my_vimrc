@@ -97,8 +97,12 @@ inoremap <M-j> <Esc>
 
 nnoremap <C-t> :tabnew<CR>
 
-nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nmap <Space>V :Vexplore!<CR><CR>
+nnoremap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nnoremap <Space>V :Vexplore!<CR><CR>
+
+" for us keyword
+noremap ; :
+noremap : ;
 
 "色とか
 set t_Co=256
