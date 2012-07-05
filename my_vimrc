@@ -95,10 +95,12 @@ imap <C-l> <Right>
 
 inoremap <M-j> <Esc>
 
-nnoremap <C-t> :tabnew<CR>
+nnoremap <C-t>t :tabnew<CR>
 
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
+
+nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 "色とか
 set t_Co=256
