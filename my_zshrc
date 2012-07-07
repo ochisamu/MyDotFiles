@@ -110,12 +110,12 @@ setopt share_history        # share command history data
 bindkey -v
 
 # history with C-p C-n
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
+#autoload history-search-end
+#zle -N history-beginning-search-backward-end history-search-end
+#zle -N history-beginning-search-forward-end history-search-end
 
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
+#bindkey "^P" history-beginning-search-backward-end
+#bindkey "^N" history-beginning-search-forward-end
 
 # terminal option
 case "${TERM}" in
@@ -141,5 +141,9 @@ setopt EXTENDED_GLOB
 #keyconfig
 #xmodmap .Xmodmap
 
-#dircolor
-
+_Z_CMD=j
+source ~/.zsh/z.sh
+precmd() {
+  _z --add "$(pwd -P)"
+}
+i
