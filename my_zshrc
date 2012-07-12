@@ -3,12 +3,12 @@ compinit
 autoload colors
 colors
 zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-#zstyle ':completion:*' list-colors ''
-zstyle ':zle:*' word-chars " -~()/:@+|"
-zstyle ':zle:*' word-style unspecified
+zstyle ':completion:*' list-colors ''
+#zstyle ':zle:*' word-chars " -~()/:@+|"
+#zstyle ':zle:*' word-style unspecified
 
-autoload -Uz select-word-style
-select-word-style bash
+#autoload -Uz select-word-style
+#select-word-style bash
 
 
 # prompt setting
@@ -46,31 +46,32 @@ function myprom(){
 	#root¤Î¾ì¹ç¤Ï¿§¤òÊÑ¤¨¤ë
 	case "$UID" in
 		0)
-			PROMPT="${PROMPT}%{[33m%}%u{%U%{[31m%}%n/"
+			PROMPT="${PROMPT}%{[33m%}%u{%U%{[31m%}%n"
 			;;
 		*)
-			PROMPT="${PROMPT}%{[33m%}{%n/"
+			PROMPT="${PROMPT}%{[33m%}{%n"
 			;;
 	esac
 }
 myprom
-PROMPT="${PROMPT}%{[36m%}INS%{[33m%}}%{[37m%}%#%b%u "
-#zsh¥×¥í¥ó¥×¥È¤Ë¥â¡¼¥ÉÉ½¼¨####################################
-function zle-line-init zle-keymap-select {
-	myprom
-	#zsh-vi¤Î¥â¡¼¥ÉÌ¾¤òÉ½¼¨
-	case $KEYMAP in
-		vicmd)
-			PROMPT="${PROMPT}%{[31m%}NOR%{[33m%}}%{[37m%}%#%b%u "
-			;;
-		main|viins)
-			PROMPT="${PROMPT}%{[36m%}INS%{[33m%}}%{[37m%}%#%b%u "
-			;;
-	esac
-	zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+PROMPT="${PROMPT}%{[33m%}}%{[37m%}%#%b%u "
+#PROMPT="${PROMPT}%{[36m%}INS%{[33m%}}%{[37m%}%#%b%u "
+##zsh¥×¥í¥ó¥×¥È¤Ë¥â¡¼¥ÉÉ½¼¨####################################
+#function zle-line-init zle-keymap-select {
+#	myprom
+#	#zsh-vi¤Î¥â¡¼¥ÉÌ¾¤òÉ½¼¨
+#	case $KEYMAP in
+#		vicmd)
+#			PROMPT="${PROMPT}%{[31m%}NOR%{[33m%}}%{[37m%}%#%b%u "
+#			;;
+#		main|viins)
+#			PROMPT="${PROMPT}%{[36m%}INS%{[33m%}}%{[37m%}%#%b%u "
+#			;;
+#	esac
+#	zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 
 # environment variables
@@ -107,7 +108,7 @@ setopt share_history        # share command history data
 
 
 # key bind
-bindkey -v
+bindkey -e
 
 # history with C-p C-n
 #autoload history-search-end
@@ -147,3 +148,12 @@ precmd() {
   _z --add "$(pwd -P)"
 }
 
+#autofu
+if [ -f ~/.zsh/auto-fu.zsh ]; then
+	source ~/.zsh/auto-fu.zsh
+	function zle-line-init () {
+		auto-fu-init
+	}
+	zle -N zle-line-init
+	zstyle ':completion:*' completer _oldlist _complete
+fi
