@@ -337,13 +337,14 @@ nnoremap <space>a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bo
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
-  \ 'active_filetypes': ['python', 'yaml'],
+  \ 'active_filetypes': ['python', 'yaml', 'ruby'],
   \ 'passive_filetypes': ['php', 'c'] }
 
-"fileごとの設定 ======================================== 
+"filetypeごとの設定 ======================================== 
 " javascript
 autocmd FileType javascript :compiler gjslint
-"autocmd QuickfixCmdPost make copen
+" ruby
+autocmd FileType ruby :setlocal tabstop=2 shiftwidth=2
 
 "im_contrtol
 let IM_CtrlIBusPython = 1
