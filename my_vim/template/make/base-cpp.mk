@@ -6,17 +6,24 @@ OBJS   = ${SRCS:.cpp=.o}
 #LIBDIR = -L
 #INCDIR = -I
 
-.PHONY: clean
+.PHONY: clean depend
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CFLAGS) -o $@ $^
-#	$(CXX) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
+	$(CXX) $(CFLAGS) -o $@ $^ $(LIBDIR) $(LIBS)
 
-$(OBJS): $(SRCS)
-	$(CXX) $(CFLAGS) -c $^
+.cpp.o:
+	$(CXX) $(CFLAGS) -c $< -o $@ $(INCDIR)
+
+#$(OBJS): $(SRCS)
+#	$(CXX) $(CFLAGS) -c $^
 #	$(CXX) $(CFLAGS) -c $^ $(INCDIR) 
 
 clean:
 	rm -rf $(OBJS) $(TARGET) *~
+
+depend:
+	makedepend -- $(CFLAGS) $(INCDIR) -- $(SRCS)
+	rm -rf *.gch Makefile.bak
+
