@@ -1,4 +1,4 @@
-CFLAGS	= -Wall
+CFLAGS	= -Wall -std=c++0x
 TARGET = {{_input_:Target}}
 SRCS = ${wildcard *.cpp}
 OBJS   = ${SRCS:.cpp=.o} 
