@@ -335,7 +335,8 @@ nnoremap <space>u :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <space>a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
-" syntastic
+" syntastica
+let g:syntastic_cpp_compiler_options = '-std=c++0x'
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['python', 'yaml', 'ruby'],
   \ 'passive_filetypes': ['php', 'c'] }
