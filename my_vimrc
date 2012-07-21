@@ -195,6 +195,8 @@ endfunction
 let g:ref_source_webdict_sites.default = 'alc'
 
 "補完
+	" 補完ウィンドウを開かない
+	set completeopt=menuone
 	" Disable AutoComplPop.
 	let g:acp_enableAtStartup = 0
 	" Use neocomplcache.
@@ -278,6 +280,7 @@ let g:ref_source_webdict_sites.default = 'alc'
 	" https://github.com/c9s/perlomni.vim
 	let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 	let g:neocomplcache_clang_use_library = 1
+	let g:neocomplcache_clang_library_path = '/usr/share/clang'
 " let g:neocomplcache_enable_at_startup = 1
 " function! InsertTabWrapper()
 " 	if pumvisible()
