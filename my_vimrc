@@ -40,6 +40,7 @@ NeoBundle 'compilerpython.vim'
 NeoBundle 'sudo.vim'
 NeoBundle 'wombat256.vim'
 NeoBundle 'a.vim'
+NeoBundle 'DoxygenToolkit.vim'
 "NeoBundle  'gtags.vim'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
@@ -106,7 +107,7 @@ nnoremap <Space>V :Vexplore!<CR><CR>
 noremap ; :
 noremap : ;
 
-nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+" nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 "色とか
 set t_Co=256
