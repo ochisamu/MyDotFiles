@@ -1,18 +1,18 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-MODULE_LICENSE("MIT");
+MODULE_LICENSE("GPL");
 
-static int {{_name_}}_module(void)
+static int {{_input_:ModuleName}}_init(void)
 {
 	printk("[INIT:%s]\n",__func__);
 	return 0;
 }
 
-static void {{_name_}}_remove(void)
+static void {{_input_:ModuleName}}_remove(void)
 {
-	printk("[REMOVE:%s]\n",__func__);	
+	printk("[EXIT:%s]\n",__func__);	
 }
 
-module_init({{_name_}}_module);
-module_exit({{_name_}}_remove);
+module_init({{_input_:ModuleName}}_init);
+module_exit({{_input_:ModuleName}}_exit);

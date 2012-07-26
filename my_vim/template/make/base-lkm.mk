@@ -1,7 +1,7 @@
 obj-m:= {{_input_:target}}.o
 
 #INPUT ALL SOURCE FILES
-SRCS = 
+SRCS = main.c {{_cursor_}}
 {{_input_:target}}-objs:= $(SRCS:.c=.o)
 
 KDIR:= /lib/modules/$(shell uname -r)/build
