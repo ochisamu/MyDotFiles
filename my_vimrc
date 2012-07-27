@@ -108,6 +108,30 @@ noremap ; :
 noremap : ;
 
 " nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+"検索語が画面の真ん中に来るようにする
+nmap n nzz
+nmap N Nzz
+"行末まで移動したとき表示行が真ん中にくるようにする
+nmap G Gzz
+"インサートモード移行時カーソル行を画面中央に
+nnoremap i zzi
+nnoremap I zzI
+nnoremap a zza
+nnoremap A zzA
+nnoremap o zzo
+nnoremap O zzO
+"ブロック移動時カーソル行を画面中央に
+nnoremap } }zz
+nnoremap { {zz
+"<C-o>ジャンプ時カーソル行を画面中央に
+nnoremap <C-o> <C-o>zz
+
+"ノーマルモード時Enterで改行する
+nnoremap <CR> o<ESC>
+
+"表示行単位で行移動
+nnoremap j gj
+nnoremap k gk
 
 "色とか
 set t_Co=256
