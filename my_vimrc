@@ -314,7 +314,7 @@ let g:ref_source_webdict_sites.default = 'alc'
 	  let g:neocomplcache_omni_patterns = {}
 	endif
 	" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-	"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+	" autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 	let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 	let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 	let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
@@ -324,22 +324,18 @@ let g:ref_source_webdict_sites.default = 'alc'
 	let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 	let g:neocomplcache_clang_use_library = 1
 	" let g:neocomplcache_clang_library_path = '/usr/share/clang'
-" let g:neocomplcache_enable_at_startup = 1
-" function! InsertTabWrapper()
-" 	if pumvisible()
-" 		return "\<c-n>"
-" 	endif
-" 	let col = col('.') - 1
-" 	if !col || getline('.')[col - 1] !~ '\k\|<\|/'
-" 		return "\<tab>"
-" 	elseif exists('&omnifunc') && &omnifunc == ''
-" 		return "\<c-n>"
-" 	else
-" 		return "\<c-x>\<c-o>"
-" 	endif
-" endfunction
-" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-" 
+
+"Rsense on neocomplcache
+if !exists('g:neocomplcache_omni_patterns')
+	let g:neocomplcache_omni_patterns = {}
+endif
+let g:rsenseUseOmniFunc = 1
+if filereadable(expand('/opt/rsense-0.3/bin/rsense'))
+	let g:rsenseHome = expand('/opt/rsense-0.3')
+
+	let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+endif
+
 "SNIPPETS
 imap <C-k> <plug>(neocomplcache_snippets_expand)
 smap <C-k> <plug>(neocomplcache_snippets_expand)
