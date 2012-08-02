@@ -172,6 +172,7 @@ autocmd GUIEnter * set visualbell t_vb=
 "インデント,タブ,クリップボード
 set autoindent
 set cindent
+set cinoptions=g0
 set shiftwidth=4
 set tabstop=4
 set backspace=indent,eol,start
