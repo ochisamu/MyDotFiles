@@ -44,6 +44,7 @@ NeoBundle 'DoxygenToolkit.vim'
 NeoBundle 'trinity.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'Source-Explorer-srcexpl.vim'
+NeoBundle 'vim-jp/cpp-vim'
 
 "NeoBundle  'gtags.vim'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
