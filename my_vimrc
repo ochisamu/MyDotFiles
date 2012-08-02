@@ -24,7 +24,6 @@ NeoBundle 'surround.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'nvie/vim-flake8'
 NeoBundle 'mattn/sonictemplate-vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'pasela/unite-webcolorname.git'
@@ -46,7 +45,6 @@ NeoBundle 'taglist.vim'
 NeoBundle 'Source-Explorer-srcexpl.vim'
 NeoBundle 'vim-jp/cpp-vim'
 
-"NeoBundle  'gtags.vim'
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
 
@@ -410,8 +408,6 @@ nnoremap <leader>w :mksession! ./.Session.vim<CR>
 nnoremap <leader>q :mksession! ./.Session.vim<CR>:wqa<CR>
 
 " QuickFix
-
-
 " C++
 " バイナリの出力のみ行う（実行は別）
 let g:quickrun_config = {}
