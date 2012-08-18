@@ -388,6 +388,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 autocmd FileType javascript :compiler gjslint
 " ruby
 autocmd FileType ruby :setlocal tabstop=2 shiftwidth=2
+" tex
+autocmd FileType tex :set fileencoding=euc-jp
 
 "im_contrtol
 let IM_CtrlIBusPython = 1
