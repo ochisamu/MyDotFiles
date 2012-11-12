@@ -6,7 +6,6 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/bundle/neobundle'))
 endif
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
 NeoBundle 'Shougo/neocomplcache-clang'
@@ -45,6 +44,14 @@ NeoBundle 'taglist.vim'
 NeoBundle 'Source-Explorer-srcexpl.vim'
 NeoBundle 'vim-jp/cpp-vim'
 
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 "NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 "NeoBundle 'git://github.com/Shougo/vinarise.git'
 
