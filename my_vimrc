@@ -118,10 +118,6 @@ nnoremap <Space>V :Vexplore!<CR><CR>
 let g:NERDTreeWinSize=21
 nnoremap <F12> :NERDTreeToggle<CR>
 
-" for us keyword
-noremap ; :
-noremap : ;
-
 " nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 "検索語が画面の真ん中に来るようにする
 nmap n nzz
