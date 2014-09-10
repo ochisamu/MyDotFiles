@@ -5,3 +5,5 @@ ln -s -i ${PWD}/my_dir_colors ~/.dir_colors
 ln -s -i ${PWD}/my_vim ~/.vim
 ln -s -i ${PWD}/my_vimrc ~/.vimrc
 ln -s -i ${PWD}/my_zsh ~/.zsh
+ln -s -i ${PWD}/my_vimperatorrc ~/.vimperatorrc
+ln -s -i ${PWD}/my_vimperator ~/.vimperator

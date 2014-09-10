@@ -1,0 +1,65 @@
+" 入力欄に自動フォーカスしない
+set focuscontent
+" ビジュアルベルを表示しない
+set visualbell
+highlight Bell display:none
+" :oなどでの補完候補をサーチエンジン、履歴に限定
+set complete=sl
+
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+" commandモードでIMEオフ
+style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+" google検索を手早くする
+noremap s :open<Space>google<Space>
+noremap S :tabopen<Space>google<Space>
+
+" 移動幅
+noremap j 5j
+noremap k 5k
+" タブ移動
+nnoremap h <C-p>
+nnoremap l <C-n>
+" タブの位置変更
+map <C-l> :tabmove! +1<CR>
+map <C-h> :tabmove! -1<CR>
+" undo一覧から開く
+nnoremap U :undo<Space>
+let g:hint_tombloo_key = 'r'
+" ブラウザ再起動
+nnoremap <C-r> :restart<CR>
+
+map <BS> ""
+
+" VisualモードでC-gで選択しているテキストでGoogle検索
+vmap <silent> <C-g> y<Esc><Esc>P
+
+" タブのピン止めを@でトグル
+" http://qiita.com/t3kot3ko/items/1b032940dbb79e88323e
+javascript <<EOM
+liberator.modules.commands.addUserCommand(["togglepin"], "add pin to current tab",
+		function(){
+		var currentTab = gBrowser.mCurrentTab
+		if(currentTab.pinned){
+		gBrowser.unpinTab(currentTab)
+		}
+		else{
+		gBrowser.pinTab(currentTab)
+		}
+		});
+EOM
+nnoremap @ :togglepin<CR>
+
+"= = = = = = = = = = = = = = = = = = = = = = = = = = = 
+" colorscheme
+"= = = = = = = = = = = = = = = = = = = = = = = = = = = 
+" デフォルトのヒント派手すぎ＞＜
+hi Hint font-family: Arial; font-size: 21px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #33cccc;
+hi HintElem color: gray; background-color: #a1e4e6;
+hi HintActive color: black; background-color: #ff8700;
+
+"読み込み完了メッセージ
+echo "vimperatorrc loaded."
+
+" [EOF]
