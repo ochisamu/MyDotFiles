@@ -1,0 +1,49 @@
+VERSION BUILD=10021450
+URL GOTO=http://speed10g.dns-test.commufa.jp/speedtest/
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s2_04.png
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button3
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button7
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button4
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s5_03a.png
+WAIT SECONDS=60
+URL GOTO=http://speed10g.dns-test.commufa.jp/speedtest/
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s2_04.png
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button3
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button7
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button4
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s5_03a.png
+WAIT SECONDS=60
+URL GOTO=http://speed10g.dns-test.commufa.jp/speedtest/
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s2_04.png
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button3
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button7
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button4
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s5_03a.png
+WAIT SECONDS=60
+URL GOTO=http://speed10g.dns-test.commufa.jp/speedtest/
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s2_04.png
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button3
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button7
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=ID:button4
+WAIT SECONDS=2
+TAG POS=1 TYPE=IMG ATTR=SRC:http://speed10g.dns-test.commufa.jp/speedtest/images/animation/s5_03a.png
+WAIT SECONDS=60
